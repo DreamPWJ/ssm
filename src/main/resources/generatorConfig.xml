@@ -17,7 +17,7 @@
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://120.77.157.198:3306/jinlele"
                         userId="root"
-                        password="jinlele&2017">
+                        password="jinlele&amp;2017">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
