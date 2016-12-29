@@ -7,7 +7,10 @@ import com.ssm.model.User;
 import com.ssm.service.interfaces.ITestService;
 import com.ssm.util.CommonUtil;
 import com.ssm.util.SysConstants;
+import com.ssm.util.datasource.DataSource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -18,6 +21,10 @@ import java.util.Map;
  * 测试用service
  */
 @Service
+//@Transactional事务处理  propagation事务传播机制  REQUIRED是保证在事务中的代码只有在当前事务中运行，防止创建多个事务
+/*@Transactional(propagation = Propagation.REQUIRED)*/
+//注解式数据源，用来进行数据源切换
+/*@DataSource(name = DataSource.DEFAULT_DATASOURCE)*/
 public class TestServiceImpl implements ITestService {
     @Resource
     BaseMapper baseMapper;

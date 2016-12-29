@@ -41,12 +41,12 @@
         <!-- 通过key-value的形式来关联数据源 -->
         <property name="targetDataSources">
             <map key-type="java.lang.String">
-                <entry value-ref="dataSourceW" key="dataSourceW"></entry>
-                <entry value-ref="dataSourceN" key="dataSourceN"></entry>
+                <entry value-ref="dataSourceM" key="dataSourceM"></entry>
+                <entry value-ref="dataSourceS" key="dataSourceS"></entry>
             </map>
         </property>
-        <!-- 配置默认数据源  -->
-        <property name="defaultTargetDataSource" ref="dataSourceW"/>
+        <!-- 配置默认主数据源  -->
+        <property name="defaultTargetDataSource" ref="dataSourceM"/>
     </bean>
 
     <!-- 动态数据源配置相同的内容(公共部分复用性) -->
@@ -89,7 +89,7 @@
 
     <!--连接池数据源druid(阿里巴巴的框架）-->
     <!--主数据源dataSourceW-->
-    <bean id="dataSourceW" parent="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    <bean id="dataSourceM" parent="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.urlM}"/>
@@ -98,7 +98,7 @@
     </bean>
 
     <!--子从备份数据源dataSourceN-->
-    <bean id="dataSourceN" parent="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    <bean id="dataSourceS" parent="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.urlS}"/>

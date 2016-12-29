@@ -20,11 +20,14 @@ import java.lang.annotation.*;
 //@Inherited 元注解是一个标记注解，@Inherited阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。
 @Inherited
 public @interface DataSource {
-    String name() default DataSource.DEFAULT_DataSOURCE;
-    //默认外网数据源数据库
-    public static String DEFAULT_DataSOURCE = "dataSourceW";
-    //内网数据源数据库
-    public static String INTRANET_DataSOURCE = "dataSourceN";
+    //默认主数据源数据库
+    public static final String DEFAULT_DATASOURCE = "dataSourceM";
+    //备份从数据源数据库
+    public static final String SLAVE_DATASOURCE = "dataSourceS";
+
+    String name() default DataSource.DEFAULT_DATASOURCE;
+
+
 
 
 }
