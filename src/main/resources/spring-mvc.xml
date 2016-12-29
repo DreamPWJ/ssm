@@ -32,10 +32,9 @@
         <bean class="com.ssm.util.authority.AuthInterceptor"></bean>
     </mvc:interceptors>-->
 
-    <!-- 如果当前请求为“/”时，则转发到“/index” -->
-    <mvc:view-controller path="/" view-name="forward:/index"/>
-    <!-- 静态资源映射  处理RestFul风格的url的静态资源被拦截器拦截  -->
-    <mvc:resources mapping="/html/**" location="/html/"/>
+    <!-- 如果当前请求为“/”时，则交给相应的视图解析器直接解析为视图 -->
+    <mvc:view-controller path="/" view-name="index"/>
+    <!-- 静态资源映射  处理RestFul风格的url的静态资源被拦截器拦截 不想进controller，可以在spring-mvc.xml中配置静态访问路径 jsp html文件若放在静态路径/images下，可以直接访问-->
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>

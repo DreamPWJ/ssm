@@ -31,7 +31,7 @@ public class TestController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/testtwo", method = RequestMethod.GET)
+    @RequestMapping(value = "/test1", method = RequestMethod.GET)
     public Map<String,Object> test1() {
         logger.info("TestController=======================" + JSON.toJSONString(testService.getUserPaging()));
         return testService.getUserPaging();
