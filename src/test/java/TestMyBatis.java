@@ -1,10 +1,15 @@
 import com.alibaba.fastjson.JSON;
+import com.ssm.service.interfaces.ITestService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
+
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
+
+
+import javax.annotation.Resource;
 
 /**
  * @author pwj on 2016/6/23 0023.
@@ -18,8 +23,8 @@ public class TestMyBatis {
     //日志类
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
     /* private ApplicationContext ac = null;*/
-/*    @Resource
-    private ITestService testService;*/
+    @Resource
+    private ITestService testService;
 
 
     /**
@@ -38,13 +43,13 @@ public class TestMyBatis {
         //dataSourceEntry.set(DataSourceEntry.INTRANET_SOURCE);
     }*/
     @Test
-    public void getAdminUser() {
-        // logger.info("TestMyBatis=======================" + JSON.toJSONString(testService.getAdminUser(1)));
+    public void getUser() {
+      logger.info("TestMyBatis=======================" + JSON.toJSONString(testService.getUser(1)));
     }
 
     @Test
     public void pageResultMap() {
-        //  logger.info("TestMyBatis=======================" + JSON.toJSONString(testService.getUserPaging()));
+       logger.info("TestMyBatis=======================" + JSON.toJSONString(testService.getUserPaging()));
     }
 
 
