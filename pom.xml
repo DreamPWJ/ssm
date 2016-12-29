@@ -177,26 +177,27 @@
         </dependency>
         <!-- log end -->
 
-        <!-- 映入JSON @ResponseBody,要把对象转换成json格式 -->
-<!--        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>-->
+        <!--旧版jackson  映入JSON @ResponseBody,要把对象转换成json格式  spring4.0可以用-->
+        <!--        <dependency>
+                    <groupId>org.codehaus.jackson</groupId>
+                    <artifactId>jackson-mapper-asl</artifactId>
+                    <version>1.9.13</version>
+                </dependency>-->
 
-        <!-- jackson包， springmvc 用他来为@ ResponseBody 注解的方法 ， 返回 json -->
+        <!-- jackson新版包Spring4.2以上需要新版， springmvc4.2 用他来为@ ResponseBody 注解的方法  自动返回json -->
+        <!-- jackson新版  注解包-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>2.6.1</version>
         </dependency>
-
+        <!-- jackson新版  数据绑定包-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.6.1</version>
         </dependency>
-
+        <!-- jackson新版  核心包-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
