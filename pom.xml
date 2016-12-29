@@ -178,10 +178,29 @@
         <!-- log end -->
 
         <!-- 映入JSON @ResponseBody,要把对象转换成json格式 -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
+        </dependency>-->
+
+        <!-- jackson包， springmvc 用他来为@ ResponseBody 注解的方法 ， 返回 json -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.6.1</version>
         </dependency>
 
         <!-- 上传组件包 -->
@@ -205,7 +224,14 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
-            <version>1.6.10</version>
+            <version>1.8.7</version>
+        </dependency>
+
+        <!--  aspectjweaver.jar这是Spring AOP切面编程所要用到的包-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.7</version>
         </dependency>
 
         <!--aopalliance包是AOP联盟的API包，里面包含了针对面向切面的接口。通常Spring等其它具备动态织入功能的框架依赖此包。-->
@@ -215,12 +241,6 @@
             <version>1.0</version>
         </dependency>
 
-        <!--  aspectjweaver.jar这是Spring AOP切面编程所要用到的包-->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.8.5</version>
-        </dependency>
 
         <!--  commons-lang.jar一些公共的工具集合，比如对字符、数组的操作等等-->
         <dependency>
@@ -241,6 +261,13 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5</version>
+        </dependency>
+
+        <!-- google提供的json解析包 spring4.x需要它 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
         </dependency>
 
         <!--   Redis缓存系统  Java-Jedis操作Redis-->
