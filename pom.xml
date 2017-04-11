@@ -25,6 +25,25 @@
         <log4j.version>1.2.17</log4j.version>
     </properties>
 
+    <!-- 设定远程仓库主仓库，按设定顺序进行查找 -->
+    <repositories>
+        <repository>
+            <id>ssm-repos</id>
+            <name>SSM Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <!-- 设定插件仓库 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ssm-repos</id>
+            <name>SSM Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </pluginRepository>
+
+    </pluginRepositories>
+
     <!-- =========maven项目依赖的jar包配置==============-->
     <dependencies>
         <dependency>
